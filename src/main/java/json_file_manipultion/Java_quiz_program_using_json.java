@@ -43,7 +43,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class example {
+public class Java_quiz_program_using_json {
     public static void main(String[] args) throws IOException, ParseException {
         System.out.println("1. Add Quiz");
         System.out.println("2. Start Quiz");
