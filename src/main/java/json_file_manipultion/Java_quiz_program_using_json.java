@@ -1,5 +1,4 @@
-package json_file_manipultion;
-/*Create a quiz program that will take questions, option and answer from admin user and save it to the question bank.
+/* Create a quiz program that will take questions, option and answer from admin user and save it to the question bank.
         Then if any user want to give the quiz, random 5 questions will be shown to the user from the question bank.
         Program output:
         1. Add Quiz
@@ -33,11 +32,11 @@ package json_file_manipultion;
         Finally 5 different random questions will appear from your question database. At least add 20 questions from any category from testing.
         Result: You got [correct_marks] out of 5 */
 
+package json_file_manipultion;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -124,7 +123,6 @@ public class Java_quiz_program_using_json {
             System.out.println("Question saved.");
             System.out.println("Do you want to add more?[y/n]");
             ch = input.next().charAt(0);
-
         }
         while (ch != 'n');
 
