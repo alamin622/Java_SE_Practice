@@ -5,17 +5,13 @@ import java.util.Scanner;
 
 public class Check_Number_Same_Different {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        System.out.println("Input First number : ");
-        double num1 = input.nextDouble();
-
-        System.out.println("Input Second number : ");
-        double num2 = input.nextDouble();
-
-        if ((Math.abs(num1 - num2)) == 0.00) {
-            System.out.println("There number are the same");
-        } else {
-            System.out.println("These number are different");
-        }
+            double number1=120.569;
+            double number2=120.57;
+            if(Math.round(number1)==Math.round(number2)){
+                System.out.println("Matches");
+            }
+            else{
+                System.out.println("Didn't match");
+            }
     }
 }

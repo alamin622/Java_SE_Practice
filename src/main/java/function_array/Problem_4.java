@@ -12,37 +12,45 @@ import java.lang.*;
 
 public class Problem_4 {
     public static void main(String[] args) {
-        HashMap<String, Integer> hashMap = new HashMap<>();
-        Integer value;
-        // Add keys and values (Item, Price)
-        hashMap.put("Banana", 100);
-        hashMap.put("Apple", 200);
-        hashMap.put("Orange", 170);
-        hashMap.put("litchi", 400);
-        System.out.println(hashMap);
-        int TotalSUm= getTotal(hashMap);
-        System.out.println("----------------------------");
-        System.out.println("TOTAL\t"  + " =  " + TotalSUm);
-
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Enter an integer :");
-        String x = scan.next();
-
-        value = hashMap.get((x));
-        System.out.println("Value is:" + value);
-        if (value == null){
-            System.out.println("No found item ");
+        HashMap itemList=items();
+        String itemName="Item 2";
+        String price=searchItem(itemName);
+        if (price.contains("Item not found")) {
+            System.out.println(price);
         }
+        else{
+            System.out.println("Price of "+ itemName+" is "+price +" tk");
+        }
+
+        int totalPrice=totalSum(itemList);
+        System.out.println("Total item price is "+ totalPrice+" Tk");
     }
-
-    public static int getTotal(HashMap<String, Integer> p) {
-        int total = 0;
-
-        for (int value : p.values()) {
-            System.out.println("\t" + value + "\t\t  " );
-            total += value;
+    public static HashMap items(){
+        HashMap<String,Integer>hashMap=new HashMap<>();
+        hashMap.put("Item 1", 100);
+        hashMap.put("Item 2", 120);
+        hashMap.put("Item 3", 800);
+        hashMap.put("Item 4", 160);
+        hashMap.put("Item 5", 20);
+        return hashMap;
+    }
+    public static String searchItem(String item){
+        HashMap itemList=items();
+        if(itemList.get(item)==null){
+            return "Item not found";
         }
-        return total;
+        else{
+            return itemList.get(item).toString();
+        }
+
+    }
+    public static int totalSum(HashMap<String, Integer> hashMap){
+        Integer[] price=hashMap.values().toArray(new Integer[0]);
+        int sum=0;
+        for(int i=0;i<price.length;i++){
+            sum+=price[i];
+        }
+        return sum;
     }
 
 }
